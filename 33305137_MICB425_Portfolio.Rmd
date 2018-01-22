@@ -1,0 +1,8 @@
+---
+title: "MICB425 portfolio"
+author: "Leilynaz Malekafzali (33305137)"
+date: '2018-01-21'
+output: html_document
+---
+
+
