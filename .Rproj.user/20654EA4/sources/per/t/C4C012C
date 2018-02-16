@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1518747885899.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2778337705",
+    "id" : "C4C012C",
+    "lastKnownWriteTime" : 1518758280,
+    "last_content_update" : 1518758280906,
+    "path" : "~/Documents/MICB425_portfolio/DS ggplot.Rmd",
+    "project_path" : "DS ggplot.Rmd",
+    "properties" : {
+        "cursorPosition" : "19,3",
+        "last_setup_crc32" : "6B9A0005bb338d19",
+        "scrollLine" : "4",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
