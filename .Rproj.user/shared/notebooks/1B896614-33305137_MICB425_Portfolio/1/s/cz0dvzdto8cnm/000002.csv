@@ -1,0 +1,99 @@
+"0","example_data3 %>% "
+"0","  kable(""html"") %>%"
+"0","  kable_styling(bootstrap_options = ""striped"", font_size = 10, full_width = F)"
+"1","<table class=""table table-striped"" style=""font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;"">
+ <thead>
+  <tr>
+   <th style=""text-align:right;""> number </th>
+   <th style=""text-align:left;""> name </th>
+   <th style=""text-align:left;""> characteristics </th>
+   <th style=""text-align:right;""> occurences </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:right;""> 1 </td>
+   <td style=""text-align:left;""> vines </td>
+   <td style=""text-align:left;""> red licorice </td>
+   <td style=""text-align:right;""> 4 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 2 </td>
+   <td style=""text-align:left;""> bricks </td>
+   <td style=""text-align:left;""> brick shaped </td>
+   <td style=""text-align:right;""> 8 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 3 </td>
+   <td style=""text-align:left;""> skittles </td>
+   <td style=""text-align:left;""> fruit-flavoured sweets </td>
+   <td style=""text-align:right;""> 39 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 4 </td>
+   <td style=""text-align:left;""> mikes &amp; ikes </td>
+   <td style=""text-align:left;""> elongated chewy candies </td>
+   <td style=""text-align:right;""> 46 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 5 </td>
+   <td style=""text-align:left;""> gummy bears </td>
+   <td style=""text-align:left;""> bear shaped </td>
+   <td style=""text-align:right;""> 19 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 6 </td>
+   <td style=""text-align:left;""> m&amp;ms </td>
+   <td style=""text-align:left;""> button-shaped candy </td>
+   <td style=""text-align:right;""> 52 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 7 </td>
+   <td style=""text-align:left;""> hershey kisses </td>
+   <td style=""text-align:left;""> silver colored </td>
+   <td style=""text-align:right;""> 4 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 8 </td>
+   <td style=""text-align:left;""> sour bear </td>
+   <td style=""text-align:left;""> bear and sour </td>
+   <td style=""text-align:right;""> 1 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 9 </td>
+   <td style=""text-align:left;""> sour fruit </td>
+   <td style=""text-align:left;""> fruit shaped and sour </td>
+   <td style=""text-align:right;""> 0 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 10 </td>
+   <td style=""text-align:left;""> sour hexa </td>
+   <td style=""text-align:left;""> octopus shaped </td>
+   <td style=""text-align:right;""> 2 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 11 </td>
+   <td style=""text-align:left;""> sour bottle </td>
+   <td style=""text-align:left;""> bottle shaped </td>
+   <td style=""text-align:right;""> 0 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 12 </td>
+   <td style=""text-align:left;""> sour swirl </td>
+   <td style=""text-align:left;""> swirl candy </td>
+   <td style=""text-align:right;""> 1 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 13 </td>
+   <td style=""text-align:left;""> jubes </td>
+   <td style=""text-align:left;""> colored candies </td>
+   <td style=""text-align:right;""> 3 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:right;""> 14 </td>
+   <td style=""text-align:left;""> wine candy </td>
+   <td style=""text-align:left;""> wine shaped </td>
+   <td style=""text-align:right;""> 3 </td>
+  </tr>
+</tbody>
+</table>"

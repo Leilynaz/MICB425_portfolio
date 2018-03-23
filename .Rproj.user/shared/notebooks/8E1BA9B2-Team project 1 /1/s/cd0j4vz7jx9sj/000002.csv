@@ -1,0 +1,3 @@
+"0","m.alpha = estimate_richness(m.norm, measures = c(""Chao1"", ""Shannon""))"
+"0","m.meta.alpha = full_join(rownames_to_column(m.alpha), rownames_to_column(data.frame(m.perc@sam_data)), by = ""rowname"")"
+"0","m.meta.alpha"

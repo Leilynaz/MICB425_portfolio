@@ -1,0 +1,6 @@
+"0","m.meta.alpha %>% "
+"0","  mutate(O2_group = ifelse(O2_uM == 0, ""anoxic"", ""oxic"")) %>% "
+"0","# Use this in a plot"
+"0","ggplot() +"
+"0","  geom_boxplot(aes(x=O2_group, y=Shannon)) +"
+"0","  labs(title=""Example 3: Alpha-diversity by oxic/anoxic"", y=""Shannon's diversity index"", x=""Oxygen"")"

@@ -1,0 +1,15 @@
+"0","set.seed(4832)"
+"0","m.norm = rarefy_even_depth(mothur, sample.size=100000)"
+"2","You set `rngseed` to FALSE. Make sure you've set & recorded
+ the random seed of your session for reproducibility.
+See `?set.seed`
+
+"
+"2","...
+"
+"2","614OTUs were removed because they are no longer 
+present in any sample after random subsampling
+
+"
+"2","...
+"

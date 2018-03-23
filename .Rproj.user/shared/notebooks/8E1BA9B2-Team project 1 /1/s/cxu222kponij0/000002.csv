@@ -1,0 +1,6 @@
+"0","m.meta.alpha %>% "
+"0","  "
+"0","ggplot() +"
+"0","  geom_point(aes(x=Depth_m, y=Shannon)) +"
+"0","   geom_smooth(method='auto', aes(x=as.numeric(Depth_m), y=Shannon)) +"
+"0","  labs(title=""Example 1: Alpha-diversity across depth"", y=""Shannon's diversity index"", x=""Depth (m)"")"

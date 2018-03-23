@@ -25,7 +25,7 @@ load("~/Documents/MICB425_portfolio/.RData")
 #Exercise 1
 
 ggplot(metadata, aes(x=PO4_uM, y=Depth_m)) +
-  geom_point(color="purple") + geom_point(shape=17)
+  geom_point(color="purple", shape=17)
 
 #Exercise 2
 
@@ -47,9 +47,8 @@ plot_bar(physeq_percent, fill="Phylum") +
   geom_bar(aes(fill=Phylum), stat="identity")
 
 #Exercise 3
-
-plot_bar(physeq_percent, fill="Phylum",  title="Phyla from 10 to 200 m in Saanich Inlet") + 
-  geom_bar(aes(fill=Phylum), stat="identity") + labs(x="Sample depth", y="percent relative abundance")
+plot_bar(physeq_percent, fill="Class",  title="Class from 10 to 200 m in Saanich Inlet") + 
+  geom_bar(aes(fill=Class), stat="identity") + labs(x="Sample depth", y="percent relative abundance")
 
 #Faceting
 
