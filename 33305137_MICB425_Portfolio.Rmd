@@ -656,6 +656,7 @@ Sort out and identify different microbial "species" based on shared properties o
 
 Once you have defined your binning criteria, separate the cells using the sampling bags provided. These operational taxonomic units (OTUs) will be considered separate "species". This problem set is based on content available at [What is Biodiversity](http://cnx.org/content/m12179/latest/).
 
+For example, load in the packages you will use.
 ```{r}
 library(kableExtra)
 library(knitr)
@@ -663,22 +664,57 @@ library(tidyverse)
 library(dplyr)
 ```
 
+Then load in the data. You should use a similar format to record your community data.
+```{r}
+example_data1 = data.frame(
+  number = c(1,2,3),
+  name = c("lion", "tiger", "bear"),
+  characteristics = c("brown cat", "striped cat", "not a cat"),
+  occurences = c(2, 4, 1)
+)
+```
+
+Finally, use these data to create a table.
+```{r}
+example_data1 %>% 
+  kable("html") %>%
+  kable_styling(bootstrap_options = "striped", font_size = 10, full_width = F)
+```
 For your community:
 
 Construct a table listing each species, its distinguishing characteristics, the name you have given it, and the number of occurrences of the species in the collection.
 Ask yourself if your collection of microbial cells from seawater represents the actual diversity of microorganisms inhabiting waters along the Line-P transect. Were the majority of different species sampled or were many missed? 
 
+For community: 
+
 ```{r}
-example_data4 = data.frame(
+example_data5 = data.frame(
   number = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14),
   name = c("vines", "bricks", "skittles", "mikes & ikes", "gummy bears", "m&ms", "hershey kisses", "sour bear", "sour fruit", "sour hexa", "sour bottle", "sour swirl", "jubes", "wine candy"),
   Characteristics= c("wine shaped", "swirl candy", "silver colored", "red licorice", "octopus shaped", "fruit-flavoured sweets", "fruit shaped and sour", "elongated chewy candies", "colored candies", "button-shaped candy", "brick shaped", "bottle shaped", "bear shaped", "bear and sour"),
-  Occurances = c(3,1,4,4,2,39,0,46,3,52,8,0,19,1)
+  Occurances = c(14,18,187,174,101,241,16,3,2,6,3,3,24,9)
 )
 ```
 
 ```{r}
-example_data4 %>% 
+example_data5 %>% 
+  kable("html") %>%
+  kable_styling(bootstrap_options = "striped", font_size = 10, full_width = F)
+```
+
+For sample: 
+
+```{r}
+example_data6 = data.frame(
+  number = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14),
+  name = c("vines", "bricks", "skittles", "mikes & ikes", "gummy bears", "m&ms", "hershey kisses", "sour bear", "sour fruit", "sour hexa", "sour bottle", "sour swirl", "jubes", "wine candy"),
+  Characteristics= c("wine shaped", "swirl candy", "silver colored", "red licorice", "octopus shaped", "fruit-flavoured sweets", "fruit shaped and sour", "elongated chewy candies", "colored candies", "button-shaped candy", "brick shaped", "bottle shaped", "bear shaped", "bear and sour"),
+  Occurances = c(4,8,39,46,19,52,4,1,0,2,0,1,3,3)
+)
+```
+
+```{r}
+example_data6 %>% 
   kable("html") %>%
   kable_styling(bootstrap_options = "striped", font_size = 10, full_width = F)
 ```
@@ -710,13 +746,13 @@ ggplot(example_data2, aes(x=x, y=y)) +
 For your sample:
 
 * Create a collector's curve for your sample (not the entire original community).
-* Does the curve flatten out? If so, after how many individual cells have been collected?
-* What can you conclude from the shape of your collector's curve as to your depth of sampling?
+* Does the curve flatten out? If so, after how many individual cells have been collected? The curve starts flatting out after 100 individuals.
+* What can you conclude from the shape of your collector's curve as to your depth of sampling? From the shape of the collector's curve, it can be observed that the slope decreases as more individueals are classified. Additionally, the sampling doesn't stop while the curve is increasing so the sampling is not incomplete. Another point to mention is that the curve reached zero at the end, showing that sampling was adequate.
 
 ```{r}
 example_data4= data.frame(
   x= c(1:178), 
-  y=c(1,1,2,2,2,3,3,3,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,7,7,7,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14)
+  y=c(1,1,2,2,2,3,3,3,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14)
 )
 ```
 
@@ -726,8 +762,6 @@ ggplot(example_data4, aes(x=x, y=y)) +
   geom_smooth() +
   labs(x="Cumulative number of individuals classified", y="Cumulative number of species observed")
 ```
-
-From the shape of the collector's curve, it can be observed that the slope decreases as more individueals are classified. Additionally, the sampling doesn't stop while the curve is increasing so the sampling is not incomplete. Another point to mention is that the curve reached zero at the end, showing that sampling was adequate.
 
 
 #### Part 3: Diversity estimates (alpha diversity)
@@ -752,7 +786,7 @@ species3 = 1/(2+4+1)
 The higher the value is, the greater the diversity. The maximum value is the number of species in the sample, which occurs when all species contain an equal number of individuals. Because the index reflects the number of species present (richness) and the relative proportions of each species with a community (evenness), this metric is a diveristy metric. Consider that a community can have the same number of species (equal richness) but manifest a skewed distribution in the proportion of each species (unequal evenness), which would result in different diveristy values.
 
 * What is the Simpson Reciprocal Index for your sample? 4.75164967
-* What is the Simpson Reciprocal Index for your original total community? 4.047037729
+* What is the Simpson Reciprocal Index for your original total community? 4.8554676
 
 ##### Richness: Chao1 richness estimator
 Another way to calculate diversity is to estimate the number of species that are present in a sample based on the empirical data to give an upper boundary of the richness of a sample. Here, we use the Chao1 richness estimator. 
@@ -769,7 +803,7 @@ So for our previous example community of 3 species with 2, 4, and 1 individuals 
 3 + 1^2/(2*2)
 ```
 
-* What is the chao1 estimate for your sample? 13.1818
+* What is the chao1 estimate for your sample? 12.3
 * What is the chao1 estimate for your original total community? 14
 
 #### Part 4: Alpha-diversity functions in R
@@ -783,38 +817,90 @@ knitr::opts_chunk$set(error = TRUE)
 library(vegan)
 ```
 
+First, we must remove the unnecesary data columns and transpose the data so that `vegan` reads it as a species table with species as columns and rows as samples (of which you only have 1).
+```{r}
+example_data1_diversity = 
+  example_data1 %>% 
+  select(name, occurences) %>% 
+  spread(name, occurences)
+
+example_data1_diversity
+```
+
+Then we can calculate the Simpson Reciprocal Index using the `diversity` function.
+```{r}
+diversity(example_data1_diversity, index="invsimpson")
+```
+
+And we can calculate the Chao1 richness estimator (and others by default) with the the `specpool` function for extrapolated species richness. This function rounds to the nearest whole number so the value will be slightly different that what you've calculated above.
+```{r}
+specpool(example_data1_diversity)
+```
+
+
+
 In Project 1, you will also see functions for calculating alpha-diversity in the `phyloseq` package since we will be working with data in that form.
 
 For your sample:
 
-* What are the Simpson Reciprocal Indices for your sample and community using the R function? 4.855468 for the sample
-* What are the chao1 estimates for your sample and community using the R function? 12 for the sample
-    + Verify that these values match your previous calculations. The values obtain using R were fairly similar to those calculated by spread sheet.
+* What are the Simpson Reciprocal Indices for your sample and community using the R function? 4.855468 for the sample and 4.75165 for the community.
+* What are the chao1 estimates for your sample and community using the R function? 12 for the sample and 14 for the community. 
+    + Verify that these values match your previous calculations.
+    
+    The values obtain using R were fairly similar to those calculated by spread sheet.
+
+Community Calculation: 
 
 ```{r}
-example_data3_diversity = 
-  example_data3 %>% 
-  select(name, occurences) %>% 
-  spread(name, occurences)
+example_data5_diversity = 
+  example_data5 %>% 
+  select(name, Occurances) %>% 
+  spread(name, Occurances)
 
-example_data3_diversity
+example_data5_diversity
 ```
 
 ```{r}
-diversity(example_data3_diversity, index="invsimpson")
+diversity(example_data5_diversity, index="invsimpson")
 ```
 
 ```{r}
-specpool(example_data3_diversity)
+specpool(example_data5_diversity)
 ```
 
+Sample calculation: 
+
+```{r}
+example_data6_diversity = 
+  example_data6 %>% 
+  select(name, Occurances) %>% 
+  spread(name, Occurances)
+
+example_data6_diversity
+```
+
+```{r}
+diversity(example_data6_diversity, index="invsimpson")
+```
+
+```{r}
+specpool(example_data6_diversity)
+```
 
 #### Part 5: Concluding activity
 If you are stuck on some of these final questions, reading the [Kunin et al. 2010](https://www.ncbi.nlm.nih.gov/pubmed/19725865) and [Lundin et al. 2012](https://www.ncbi.nlm.nih.gov/pubmed/23760801) papers may provide helpful insights. 
 
-* How does the measure of diversity depend on the definition of species in your samples? Measure of diversity depends heavily on our definitions of species. Based on the definitions of species, we bin the candies.
-* Can you think of alternative ways to cluster or bin your data that might change the observed number of species? Yes, another way was to define species by the type of the candy and also the color of the candies.
-* How might different sequencing technologies influence observed diversity in a sample? different sequencing technology can define a species differenly. This would put a challenge on the researchers who use different technoloies and might not be able to compare their data in future studies.
+* How does the measure of diversity depend on the definition of species in your samples? 
+
+Measure of diversity depends heavily on our definitions of species. Based on the definitions of species, we bin the candies.
+
+* Can you think of alternative ways to cluster or bin your data that might change the observed number of species? 
+
+Yes, another way was to define species by the type of the candy and also the color of the candies.
+
+* How might different sequencing technologies influence observed diversity in a sample? 
+
+Different sequencing technology can define a species differenly. This would put a challenge on the researchers who use different technoloies and might not be able to compare their data in future studies.
 
 ## Module 3 references: 
 
